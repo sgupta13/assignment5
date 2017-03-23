@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script>
+function checkCompleteness()
+ {
+   if(document.getElementById("userid").value == "")
+     {
+      var errmsg= document.getElementById('errMsg1');
+      errmsg.style.color="Red";
+      errmsg.style.textDecoration = "underline";
+      document.getElementById('errMsg1').textContent ="ID is missing";
+     }
+   
+   if(document.getElementById("fname").value == "")
+     {
+       var errmsg= document.getElementById('errMsg2');
+       errmsg.style.color="Red";
+       errmsg.style.textDecoration = "underline";
+       document.getElementById('errMsg2').textContent ="First Name is missing";
+     }
+	 
+   if(document.getElementById("lname").value == "")
+     {
+       var errmsg= document.getElementById('errMsg3');
+       errmsg.style.color="Red";
+       errmsg.style.textDecoration = "underline";
+       document.getElementById('errMsg3').textContent ="Last Name is missing";
+     }
+	 
+   if (document.getElementById("userid").value == "" && document.getElementById("fname").value != "" && document.getElementById("lname").value != "" )
+     {
+       alert("ID is missing");
+     }
+	 
+   if (document.getElementById("userid").value != "" && document.getElementById("fname").value == "" && document.getElementById("lname").value != ""  )
+    {
+       alert("FirstName is missing");
+    }
+
+   if (document.getElementById("userid").value != "" && document.getElementById("fname").value != "" && document.getElementById("lname").value == "" )
+     {
+       alert("LastName is missing");
+     }
+
+   if (document.getElementById("userid").value == "" && document.getElementById("fname").value == "" && document.getElementById("lname").value != "" )
+     {
+       alert("ID & FirstName are missing");
+     }
+
+   if (document.getElementById("userid").value == "" && document.getElementById("fname").value != "" && document.getElementById("lname").value == "" )	 
+     {
+       alert("ID  & LastName are missing");
+     }
+
+   if (document.getElementById("userid").value != "" && document.getElementById("fname").value == "" && document.getElementById("lname").value == "" )
+     {
+       alert("FirstName & LastName are missing");
+     }
+
+   if (document.getElementById("userid").value == "" && document.getElementById("fname").value == "" && document.getElementById("lname").value == "" )
+     {
+       alert("ID ,FirstName & LastName are missing");
+     }
+
+   if (document.getElementById("userid").value != "" && document.getElementById("fname").value != "" && document.getElementById("lname").value != "")
+     {
+      var userInputID=document.getElementById("userid").value;
+      var userInputFN=document.getElementById("fname").value;
+      var userInputLN=document.getElementById("lname").value;
+
+      document.getElementById("add").reset();
+	  document.getElementById('successID').textContent ="ID is:  " + userInputID;
+      document.getElementById('successFName').textContent ="First Name is:  " + userInputFN;
+      document.getElementById('successLName').textContent ="Last Name is:  " + userInputLN;
+     }
+ }
+</script>
+</head>
+<body>
+<form id="add">
+<p>
+ID: <input id="userid" name="usr_id" type="text" />
+</p>
+<p>
+First Name: <input id="fname" name="usr_fname" type="text" />
+</p>
+<p>
+Last Name: <input id="lname" name="usr_lname" type="text" />
+</p>
+<p>
+<input type="submit" value="Add" onclick="checkCompleteness()"/>
+</p>
+</form>
+<br />
+<p id="successID"></p>
+<p id="successFName"></p>
+<p id="successLName"></p>
+</body>
+</html>
