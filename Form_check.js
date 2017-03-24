@@ -5,7 +5,7 @@ function checkCompleteness()
     var errmsg= document.getElementById('errID');
     errmsg.style.color="red";
     errmsg.style.textDecoration = "underline";
-    document.getElementById('errID').textContent ="Please enter an ID";
+    document.getElementById('errID').textContent ="          Please enter an ID";
    }
    
   if(document.getElementById("userFN").value == "" )
@@ -13,7 +13,7 @@ function checkCompleteness()
     var errmsg= document.getElementById('errFN');
     errmsg.style.color="red";
     errmsg.style.textDecoration = "underline";
-    document.getElementById('errFN').textContent ="Please enter a First Name";
+    document.getElementById('errFN').textContent ="          Please enter a First Name";
    }
 
   if(document.getElementById("userLN").value == "")
@@ -21,7 +21,7 @@ function checkCompleteness()
     var errmsg= document.getElementById('errLN');
     errmsg.style.color="red";
     errmsg.style.textDecoration = "underline";
-    document.getElementById('errLN').textContent ="Please enter a Last Name";
+    document.getElementById('errLN').textContent ="          Please enter a Last Name";
    }
    
   if(document.getElementById("userID").value == "" && document.getElementById("userFN").value !=0 && document.getElementById("userLN").value !=0 )
